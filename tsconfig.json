@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/images/*": ["./assets/images/*"]
+      "@/images/*": ["./assets/images/*"],
+      "@/lib/*": ["./lib/*"]
     }
   },
   "include": [

@@ -1,31 +1,28 @@
 "use client";
+import { scrollToSection } from "@/lib/utils";
 import { Home, Menu } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
-export default function Header() {
+import Logo from "@/images/the-yellow-house-logo.png";
+
+export default function Header({ className }: { className?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  /* TODO: Fix duplicated Code */
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
 
   return (
     <header
-      className="bg-white shadow-sm fixed w-full top-0 z-50"
+      className={`bg-white shadow-sm w-full ${className}`}
       data-name="header"
       data-file="components/Header.js"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-[var(--primary-color)] rounded-lg flex items-center justify-center">
-              <Home className=" text-xl text-white"></Home>
-            </div>
+            <Image
+              src={Logo}
+              alt="The Yellow House Logo"
+              className="w-10 h-10 rounded-lg"
+            />
             <div>
               <h1 className="text-xl font-bold text-[var(--text-dark)]">
                 The Yellow House

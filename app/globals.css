@@ -39,6 +39,10 @@
     @apply bg-white text-[var(--primary-color)] border-2 border-[var(--primary-color)] px-6 py-3 rounded-lg font-medium hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-200;
   }
 
+  .btn-link {
+    @apply text-[var(--primary-color)] font-medium hover:cursor-pointer transition-colors duration-200;
+  }
+
   .card {
     @apply bg-white rounded-xl shadow-lg overflow-hidden;
   }

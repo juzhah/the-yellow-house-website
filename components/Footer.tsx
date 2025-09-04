@@ -1,6 +1,8 @@
 "use client";
 
-import { Home, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import Logo from "@/images/the-yellow-house-logo.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -20,9 +22,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-[var(--primary-color)] rounded-lg flex items-center justify-center">
-                <Home className=" text-xl text-white"></Home>
-              </div>
+              <Image
+                src={Logo}
+                alt="The Yellow House Logo"
+                className="w-10 h-10 rounded-lg"
+              />
               <div>
                 <h3 className="text-xl font-bold">The Yellow House</h3>
                 <p className="text-gray-300">Boquete</p>

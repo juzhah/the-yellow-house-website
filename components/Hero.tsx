@@ -3,15 +3,10 @@
 import { MapPin, Star, Users } from "lucide-react";
 import Image from "next/image";
 import yellowHouseImage from "@/images/yellow-house-1.jpeg";
+import { scrollToSection } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Hero() {
-  const scrollToBooking = () => {
-    const element = document.getElementById("booking");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -34,10 +29,14 @@ export default function Hero() {
               everything you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={scrollToBooking} className="btn-primary">
+              <button
+                onClick={() => scrollToSection("booking")}
+                className="btn-primary"
+              >
                 Book Your Stay
               </button>
-              <button
+              <Link
+                href={"/apartments"}
                 /* onClick={() =>
                   document
                     .getElementById("apartments")
@@ -46,7 +45,7 @@ export default function Hero() {
                 className="btn-secondary"
               >
                 View Apartments
-              </button>
+              </Link>
             </div>
             <div className="mt-8 flex items-center space-x-6">
               <div className="flex items-center space-x-2">
