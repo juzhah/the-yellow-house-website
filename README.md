@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Yellow House Boquete - Landing Page
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+A modern, responsive landing page for The Yellow House Boquete - a vacation rental business offering cozy apartments in Boquete, Panama.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Modern Design**: Clean, professional layout with yellow/amber color scheme
+- **Responsive**: Works perfectly on desktop, tablet, and mobile devices
+- **Direct Booking**: Integrated booking form that saves to Trickle database
+- **Apartment Showcase**: Beautiful image galleries for each apartment
+- **Contact Information**: Easy access to phone, email, and location details
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Apartments Available
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Apartment 1**: Comfortable with modern amenities
+2. **Apartment 2**: Spacious and bright with balcony
+3. **Apartment 3 (Loft)**: Unique loft-style design
 
-## Learn More
+## All Apartments Include
 
-To learn more about Next.js, take a look at the following resources:
+- Private Kitchen
+- Full Bathroom
+- Hot Water
+- Fast WiFi
+- TV
+- Air Conditioning/Balcony
+- Clean Linens
+- 24/7 Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact Information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Phone**: +507 6305 9632
+- **Email**: theyellowhouseboquete@gmail.com
+- **Location**: Boquete, Chiriquí, Panama
 
-## Deploy on Vercel
+## Technology Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- React 18
+- TailwindCSS
+- Lucide Icons
+- Trickle Database for booking management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Last Updated
+
+January 2025
+
+# Rule for README Maintenance
+
+When project updates are made:
+
+- Always check if README.md needs updating with new features, changes, or information
+- Update contact information if it changes
+- Update apartment details if new apartments are added or features change
+- Update technology stack if new tools or frameworks are added
+- Update the "Last Updated" date whenever README is modified
+- Keep the README concise but comprehensive for new users or developers
