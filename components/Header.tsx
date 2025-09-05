@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import Logo from "@/images/logos/the-yellow-house-logo.png";
+import Link from "next/link";
 
 export default function Header({ className }: { className?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,35 +35,24 @@ export default function Header({ className }: { className?: string }) {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
+            <Link
+              href="/"
               className="text-[var(--text-dark)] hover:text-[var(--primary-color)] transition-colors"
             >
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection("apartments")}
+            </Link>
+            <Link
+              href="/apartments"
               className="text-[var(--text-dark)] hover:text-[var(--primary-color)] transition-colors"
             >
               Apartments
-            </button>
-            <button
-              onClick={() => scrollToSection("features")}
-              className="text-[var(--text-dark)] hover:text-[var(--primary-color)] transition-colors"
-            >
-              Features
-            </button>
+            </Link>
+
             <button
               onClick={() => scrollToSection("booking")}
-              className="text-[var(--text-dark)] hover:text-[var(--primary-color)] transition-colors"
+              className="hover:cursor-pointer text-[var(--text-dark)] hover:text-[var(--primary-color)] transition-colors"
             >
               Book Now
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-[var(--text-dark)] hover:text-[var(--primary-color)] transition-colors"
-            >
-              Contact
             </button>
           </nav>
 
@@ -77,35 +67,24 @@ export default function Header({ className }: { className?: string }) {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection("home")}
+              <Link
+                href="/"
                 className="text-left text-[var(--text-dark)] hover:text-[var(--primary-color)]"
               >
                 Home
-              </button>
-              <button
-                onClick={() => scrollToSection("apartments")}
+              </Link>
+              <Link
+                href="/apartments"
                 className="text-left text-[var(--text-dark)] hover:text-[var(--primary-color)]"
               >
                 Apartments
-              </button>
-              <button
-                onClick={() => scrollToSection("features")}
-                className="text-left text-[var(--text-dark)] hover:text-[var(--primary-color)]"
-              >
-                Features
-              </button>
+              </Link>
+
               <button
                 onClick={() => scrollToSection("booking")}
-                className="text-left text-[var(--text-dark)] hover:text-[var(--primary-color)]"
+                className="hover:cursor-pointer text-left text-[var(--text-dark)] hover:text-[var(--primary-color)]"
               >
                 Book Now
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-left text-[var(--text-dark)] hover:text-[var(--primary-color)]"
-              >
-                Contact
               </button>
             </nav>
           </div>
