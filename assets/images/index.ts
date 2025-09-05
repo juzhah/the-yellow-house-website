@@ -1,18 +1,20 @@
 import { StaticImageData } from "next/image";
 
-import room1_2 from "@/images/room-1-2.jpeg";
-import room1_3 from "@/images/room-1-3.jpeg";
-import room1_4 from "@/images/room-1-4.jpeg";
+import { room_1 } from "./room-1";
+import { room_2 } from "./room-2";
+import { room_4 } from "./room-4";
+import { room_6 } from "./room-6";
+import { room_7 } from "./room-7";
+import { cabin } from "./cabin";
+import { yellow_house } from "./yellow-house";
+/*import { yellowHouse } from "./yellow-house"; */
 
 export const images: { [key: string]: StaticImageData[] } = {
-  apt1: [room1_2],
-  apt2: [room1_2],
-  apt3: [room1_2],
-  apt4: [room1_2, room1_3, room1_4],
-  apt5: [room1_2, room1_3, room1_4],
-  apt6: [room1_2, room1_3, room1_4],
-  apt7: [room1_2, room1_3, room1_4],
-  apt8: [room1_2, room1_3, room1_4],
-  apt9: [room1_2, room1_3, room1_4],
-  apt10: [room1_2, room1_3, room1_4],
+  apt1: room_1,
+  apt2: room_2,
+  apt4: room_4,
+  apt6: room_6,
+  apt7: room_7,
+  cabin: cabin,
+  yellow_house: yellow_house,
 };

@@ -2,7 +2,7 @@
 
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/images/the-yellow-house-logo.png";
+import Logo from "@/images/logos/the-yellow-house-logo.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -13,11 +13,7 @@ export default function Footer() {
   };
 
   return (
-    <footer
-      className="bg-[var(--text-dark)] text-white section-padding"
-      data-name="footer"
-      data-file="components/Footer.js"
-    >
+    <footer className="bg-[var(--text-dark)] text-white section-padding overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">

@@ -20,7 +20,7 @@ export interface Apartment {
 
 const data: Apartment[] = [
   {
-    slug: "apartmen-1",
+    slug: "apartment-1",
     name: "Apartment 1",
     description:
       "Comfortable apartment with modern amenities and cozy atmosphere",
@@ -30,7 +30,7 @@ const data: Apartment[] = [
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
   },
   {
-    slug: "apartmen-2",
+    slug: "apartment-2",
     name: "Apartment 2",
     description:
       "Spacious and bright apartment perfect for couples or solo travelers",
@@ -39,8 +39,8 @@ const data: Apartment[] = [
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
   },
-  {
-    slug: "apartmen-3",
+  /*  {
+    slug: "apartment-3",
     name: "Loft",
     description:
       "Unique loft-style apartment with extra space and modern design",
@@ -48,19 +48,19 @@ const data: Apartment[] = [
     name_location: "Boquete, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
-  },
+  }, */
   {
-    slug: "apartmen-4",
-    name: "Apartment 3",
+    slug: "apartment-4",
+    name: "Apartment 4",
     description:
       "Unique loft-style apartment with extra space and modern design",
-    images: images.apt3,
+    images: images.apt4,
     name_location: "Boquete, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
   },
-  {
-    slug: "apartmen-5",
+  /* {
+    slug: "apartment-5",
     name: "Apartment 4",
     description:
       "Unique loft-style apartment with extra space and modern design",
@@ -68,23 +68,23 @@ const data: Apartment[] = [
     name_location: "Boquete, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
-  },
+  }, */
   {
-    slug: "apartmen-6",
-    name: "Apartment 5",
+    slug: "apartment-6",
+    name: "Apartment 6",
     description:
       "Unique loft-style apartment with extra space and modern design",
-    images: images.apt3,
+    images: images.apt6,
     name_location: "Boquete, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
   },
   {
-    slug: "apartmen-7",
-    name: "Apartment 6",
+    slug: "apartment-7",
+    name: "Apartment 7",
     description:
       "Unique loft-style apartment with extra space and modern design",
-    images: images.apt3,
+    images: images.apt7,
     name_location: "Boquete, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 2 },
@@ -94,20 +94,20 @@ const data: Apartment[] = [
     name: "Cabin ",
     description:
       "Unique loft-style apartment with extra space and modern design",
-    images: images.apt4,
+    images: images.cabin,
     name_location: "Bugaba, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
     specs: { bedrooms: 1, bathrooms: 1, area: "45ft", maxGuests: 4 },
   },
   {
-    slug: "full-huse",
-    name: "Full house",
+    slug: "yellow-house",
+    name: "The Yellow House",
     description:
       "Unique loft-style apartment with extra space and modern design",
-    images: images.apt5,
-    name_location: "David, Chiriqui",
+    images: images.yellow_house,
+    name_location: "Boquete, Chiriqui",
     maps_location: "https://maps.app.goo.gl/53B8e3gmbJfzPwSB9",
-    specs: { bedrooms: 2, bathrooms: 2, area: "45ft", maxGuests: 5 },
+    specs: { bedrooms: 4, bathrooms: 1, area: "45ft", maxGuests: 8 },
   },
 ];
 

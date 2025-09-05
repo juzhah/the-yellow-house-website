@@ -33,11 +33,13 @@ const ApartmentCarousel = ({
   };
 
   return (
-    <div className="relative">
+    <div className="relative aspect-video overflow-hidden">
       <Image
+        fill
         src={images[currentImageIndex]}
         alt={`${apartmentName} - Image `}
-        className="w-full h-64 object-cover aspect-video"
+        sizes="(max-width: 640px) 100vw, 25vw"
+        className="object-cover"
       />
 
       {images.length > 1 && (
@@ -61,7 +63,7 @@ const ApartmentCarousel = ({
                 onClick={() => setCurrentImageIndex(index)}
                 className={`w-2 h-2 rounded-full transition-colors ${
                   index === currentImageIndex
-                    ? "bg-white"
+                    ? "bg-[var(--primary-color)]"
                     : "bg-white bg-opacity-50"
                 }`}
               />
@@ -125,7 +127,7 @@ function ApartmentCard({ apartment }: { apartment: Apartment }) {
           </div>
           <div className="flex items-center gap-2">
             <Bath size={16} color="var(--primary-color)" />
-            {apartment.specs.bedrooms}
+            {apartment.specs.bathrooms}
           </div>
         </div>
       </div>
@@ -160,9 +162,15 @@ function Apartments() {
 
       {/* Content */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-        <ApartmentCard apartment={apartmentsData[2]} />
-        <ApartmentCard apartment={apartmentsData[7]} />
-        <ApartmentCard apartment={apartmentsData[8]} />
+        <ApartmentCard
+          apartment={apartmentsData.find((apt) => apt.slug === "apartment-1")!}
+        />
+        <ApartmentCard
+          apartment={apartmentsData.find((apt) => apt.slug === "yellow-house")!}
+        />
+        <ApartmentCard
+          apartment={apartmentsData.find((apt) => apt.slug === "cabin")!}
+        />
       </div>
     </section>
   );

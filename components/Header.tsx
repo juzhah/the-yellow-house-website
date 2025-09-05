@@ -4,7 +4,7 @@ import { Home, Menu } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
-import Logo from "@/images/the-yellow-house-logo.png";
+import Logo from "@/images/logos/the-yellow-house-logo.png";
 
 export default function Header({ className }: { className?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +21,8 @@ export default function Header({ className }: { className?: string }) {
             <Image
               src={Logo}
               alt="The Yellow House Logo"
+              width={1000}
+              height={1000}
               className="w-10 h-10 rounded-lg"
             />
             <div>

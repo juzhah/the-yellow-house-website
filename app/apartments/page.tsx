@@ -11,7 +11,7 @@ function Apartments() {
     <>
       <Header />
       <div className="bg-amber-300 py-20 mb-10 mx-auto ">
-        <div className="max-w-7xl mx-auto ">
+        <div className="max-w-7xl px-10 md:mx-auto">
           <Link href="/" className="relative hover:cursor-pointer">
             <div className="absolute top-[-35] flex items-center gap-2 mb-4 hover:border-b-1 w-fit ">
               <ArrowLeft size={18} color="var(--text-dark)" />

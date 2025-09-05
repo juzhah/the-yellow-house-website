@@ -1,7 +1,7 @@
 "use client";
-import PaypallLogo from "@/images/paypall-logo.svg";
-import YappyLogo from "@/images/yappy-logo.svg";
-import WompiLogo from "@/images/Wompi_LogoPrincipal.svg";
+import PaypallLogo from "@/images/logos/paypall-logo.svg";
+import YappyLogo from "@/images/logos/yappy-logo.svg";
+import WompiLogo from "@/images/logos/Wompi_LogoPrincipal.svg";
 import {
   AlertCircle,
   CheckCircle,
