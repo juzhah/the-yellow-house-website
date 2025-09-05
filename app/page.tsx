@@ -1,4 +1,4 @@
-import Apartments from "@/components/Apartments";
+import { Apartments } from "@/components/Apartments";
 import BookingForm from "@/components/BookingForm";
 import Contact from "@/components/Contact";
 import Features from "@/components/Features";
@@ -8,14 +8,13 @@ import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white" data-name="app" data-file="app.js">
-      <Header />
+    <div className="min-h-screen bg-white overflow-hidden">
+      <Header className="fixed top-0 z-50 " />
       <Hero />
       <Apartments />
       <Features />
       <BookingForm />
       <Contact />
-      <Footer />
     </div>
   );
 }

@@ -2,16 +2,11 @@
 
 import { MapPin, Star, Users } from "lucide-react";
 import Image from "next/image";
-import yellowHouseImage from "@/images/yellow-house-1.jpeg";
+import yellowHouseImage from "@/images/yellow-house/yellow-house-1.jpeg";
+import { scrollToSection } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Hero() {
-  const scrollToBooking = () => {
-    const element = document.getElementById("booking");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -34,10 +29,14 @@ export default function Hero() {
               everything you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={scrollToBooking} className="btn-primary">
+              <button
+                onClick={() => scrollToSection("booking")}
+                className="btn-primary"
+              >
                 Book Your Stay
               </button>
-              <button
+              <Link
+                href={"/apartments"}
                 /* onClick={() =>
                   document
                     .getElementById("apartments")
@@ -46,7 +45,7 @@ export default function Hero() {
                 className="btn-secondary"
               >
                 View Apartments
-              </button>
+              </Link>
             </div>
             <div className="mt-8 flex items-center space-x-6">
               <div className="flex items-center space-x-2">
@@ -65,9 +64,13 @@ export default function Hero() {
           </div>
           <div className="relative">
             <Image
+              priority
               src={yellowHouseImage}
               alt="The Yellow House Boquete exterior"
               className="rounded-2xl shadow-2xl w-full h-auto"
+              width={3024}
+              height={4032}
+              sizes="(min-width: 1360px) 584px, (min-width: 1040px) calc(40vw + 48px), calc(97.78vw - 25px)"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
               <div className="flex items-center space-x-3">

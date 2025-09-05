@@ -1,23 +1,17 @@
 "use client";
+import PaypallLogo from "@/images/logos/paypall-logo.svg";
+import YappyLogo from "@/images/logos/yappy-logo.svg";
+import WompiLogo from "@/images/logos/Wompi_LogoPrincipal.svg";
 import {
   AlertCircle,
-  Check,
   CheckCircle,
   CreditCard,
   DollarSign,
   Link,
-  Smartphone,
 } from "lucide-react";
-import {
-  ChangeEvent,
-  ChangeEventHandler,
-  FormEvent,
-  FormEventHandler,
-  useState,
-} from "react";
-import YappyLogo from "@/images/yappy-logo.svg";
-import PaypallLogo from "@/images/paypall-logo.svg";
 import Image from "next/image";
+import { ChangeEvent, FormEvent, useState } from "react";
+import apartmentData from "@/assets/apartments-data";
 
 type FormInput =
   | ChangeEvent<HTMLInputElement>
@@ -100,12 +94,7 @@ export default function BookingForm() {
     formData.checkOut;
 
   return (
-    <section
-      id="booking"
-      className="bg-gray-50 section-padding"
-      data-name="booking"
-      data-file="components/BookingForm.js"
-    >
+    <section id="booking" className="bg-gray-50 section-padding pt-25">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-[var(--text-dark)] mb-4">
@@ -200,9 +189,11 @@ export default function BookingForm() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent"
                 >
                   <option value="">Select an apartment</option>
-                  <option value="apartment-1">Apartment 1</option>
-                  <option value="apartment-2">Apartment 2</option>
-                  <option value="apartment-3">Apartment 3 (Loft)</option>
+                  {apartmentData.map((apt) => (
+                    <option key={apt.slug} value={apt.slug}>
+                      {apt.name}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -252,6 +243,8 @@ export default function BookingForm() {
                   <option value="2">2 Guests</option>
                   <option value="3">3 Guests</option>
                   <option value="4">4 Guests</option>
+                  <option value="4">5 Guests</option>
+                  <option value="4">6 Guests</option>
                 </select>
               </div>
             </div>
@@ -291,12 +284,15 @@ export default function BookingForm() {
               <p className="text-center text-sm font-medium text-[var(--text-dark)] mb-4">
                 We accept payments through:
               </p>
-              <div className="flex justify-center items-center space-x-6 flex-wrap gap-4">
+              <div className="flex justify-center items-center space-x-12 flex-wrap gap-4">
                 <div className="flex items-center space-x-2 bg-gray-50 px-3 py-2 rounded-lg">
                   <Image src={YappyLogo} alt="Yappy Logo" className="w-24" />
                 </div>
                 <div className="flex items-center space-x-2 bg-gray-50 px-3 py-2 rounded-lg">
                   <Image src={PaypallLogo} alt="Paypal Logo" className="w-24" />
+                </div>
+                <div className="flex items-center space-x-2 bg-gray-50 px-3 py-2 rounded-lg">
+                  <Image src={WompiLogo} alt="Wompi Logo" className="w-16" />
                 </div>
                 <div className="flex items-center space-x-2 bg-gray-50 px-3 py-2 rounded-lg">
                   <CreditCard className="text-lg text-green-600"></CreditCard>
