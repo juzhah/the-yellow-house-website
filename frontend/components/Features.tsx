@@ -1,51 +1,54 @@
-import {
-  Car,
-  Check,
-  DollarSign,
-  Home,
-  MapPin,
-  ShieldCheck,
-  Wifi,
-} from "lucide-react";
+import strapiQuery from "@/lib/strapi";
+import { STRAPI_DOMAIN } from "@/lib/utils";
+import { Feature } from "@/types/features";
+import { AmenitiesSection, FeaturesSection } from "@/types/home-sections";
+import { Check } from "lucide-react";
 
-export default function Features() {
-  const features = [
-    {
-      icon: <Home className="text-2xl text-[var(--primary-color)]" />,
-      title: "Feel at Home",
-      description:
-        "Familiar environment with all the comforts you need for a relaxing stay",
-    },
-    {
-      icon: <MapPin className="text-2xl text-[var(--primary-color)]" />,
-      title: "Prime Location",
-      description:
-        "Close to everything in Boquete - restaurants, shops, and attractions",
-    },
-    {
-      icon: <ShieldCheck className="text-2xl text-[var(--primary-color)]" />,
-      title: "Safe & Clean",
-      description:
-        "Thoroughly cleaned and sanitized apartments in a secure location",
-    },
-    {
-      icon: <Wifi className="text-2xl text-[var(--primary-color)]" />,
-      title: "Fast Internet",
-      description:
-        "High-speed WiFi perfect for work, streaming, or staying connected",
-    },
-    {
-      icon: <Car className="text-2xl text-[var(--primary-color)]" />,
-      title: "Easy Access",
-      description: "Convenient parking and easy access to local transportation",
-    },
-    {
-      icon: <DollarSign className="text-2xl text-[var(--primary-color)]" />,
-      title: "Great Value",
-      description:
-        "Affordable rates without compromising on quality and comfort",
-    },
-  ];
+export default async function Features() {
+  const params = `populate[homeSections][on][sections.amenities][populate]=*&populate[homeSections][on][sections.features][populate][heading][populate]=*&populate[homeSections][on][sections.features][populate][features][populate]=icon`;
+
+  const res = await strapiQuery("home", params);
+  const [features, amenities] = res.data.homeSections;
+
+  const amenitiesBadges = amenities.amenities.map((amenity: any) => (
+    <div
+      key={amenity.id}
+      className="flex items-center space-x-2 justify-center"
+    >
+      <Check className="text-sm text-[var(--primary-color)]" />
+      <span className="text-sm font-medium text-[var(--text-dark)]">
+        {amenity.name}
+      </span>
+    </div>
+  ));
+
+  const featuresCards = features.features.map((feature: Feature) => (
+    <div
+      key={feature.id}
+      className="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors duration-200"
+    >
+      <div className="text-sm text-[var(--primary-color)] w-16 h-16 bg-[var(--background-light)] rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg
+          width={feature.icon.width}
+          height={feature.icon.height}
+          className="text-2xl text-[var(--primary-color)]"
+        >
+          <image
+            xlinkHref={STRAPI_DOMAIN + feature.icon.url}
+            width={feature.icon.width}
+            height={feature.icon.height}
+          />
+        </svg>
+      </div>
+
+      <h3 className="text-xl font-bold text-[var(--text-dark)] mb-3">
+        {feature.title}
+      </h3>
+      <p className="text-[var(--text-light)] leading-relaxed">
+        {feature.description}
+      </p>
+    </div>
+  ));
 
   return (
     <section
@@ -57,58 +60,23 @@ export default function Features() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-[var(--text-dark)] mb-4">
-            Why Choose The Yellow House?
+            {features.heading.title}
           </h2>
           <p className="text-xl text-[var(--text-light)] max-w-3xl mx-auto">
-            We offer more than just accommodation - we provide a home away from
-            home experience in the heart of beautiful Boquete.
+            {features.heading.description}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors duration-200"
-            >
-              <div className="w-16 h-16 bg-[var(--background-light)] rounded-full flex items-center justify-center mx-auto mb-4">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-[var(--text-dark)] mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-[var(--text-light)] leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+          {featuresCards}
         </div>
 
         <div className="mt-16 bg-[var(--background-light)] rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-[var(--text-dark)] mb-4">
-            All Apartments Include
+            {amenities.heading.title}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "Hot Water",
-              "Fast WiFi",
-              "Private Kitchen",
-              "Full Bathroom",
-              "TV",
-              "Air Conditioning",
-              "Clean Linens",
-              "24/7 Support",
-            ].map((amenity, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-2 justify-center"
-              >
-                <Check className="text-sm text-[var(--primary-color)]"></Check>
-                <span className="text-sm font-medium text-[var(--text-dark)]">
-                  {amenity}
-                </span>
-              </div>
-            ))}
+            {amenitiesBadges}
           </div>
         </div>
       </div>

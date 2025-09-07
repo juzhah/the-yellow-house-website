@@ -1,12 +1,22 @@
 import BookingForm from "@/components/BookingForm";
 
 import apartmentsData from "@/assets/apartments-data";
-import { ApartmentCard } from "@/components/Apartments";
+
 import Header from "@/components/Header";
 import Link from "next/link";
 import { ArrowLeft, MoveLeft } from "lucide-react";
 
-function Apartments() {
+import axios from "axios";
+import { Property } from "@/types/property-types";
+import ApartmentCard from "@/components/apartments/ApartmentCard";
+import strapiQuery from "@/lib/strapi";
+
+export default async function Apartments() {
+  const params = "populate=*";
+  const res = await strapiQuery("properties", params);
+
+  const properties: Property[] = res.data;
+
   return (
     <>
       <Header />
@@ -32,8 +42,8 @@ function Apartments() {
         data-file="components/Apartments.js"
       >
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-          {apartmentsData.map((apartment, idx) => (
-            <ApartmentCard key={idx} apartment={apartment} />
+          {properties.map((property: Property) => (
+            <ApartmentCard key={property.id} apartment={property} />
           ))}
         </div>
       </section>
@@ -41,5 +51,3 @@ function Apartments() {
     </>
   );
 }
-
-export default Apartments;
