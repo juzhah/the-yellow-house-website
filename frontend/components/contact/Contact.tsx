@@ -14,7 +14,7 @@ export default async function Contact() {
   const c2a = res.data.homeSections[1];
 
   const contactCards = contacts.map((contact: ContactEntry) => (
-    <ContactCard contact={contact} />
+    <ContactCard key={contact.id} contact={contact} />
   ));
   return (
     <section
