@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_featureds",
+  "info": {
+    "displayName": "Featured"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "shared.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property.property"
+    }
+  },
+  "config": {}
+}

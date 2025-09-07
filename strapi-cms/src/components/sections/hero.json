@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "blocks",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "primaryBtn": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false,
+      "required": true
+    },
+    "secondaryBtn": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false,
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

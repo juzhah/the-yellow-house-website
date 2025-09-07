@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_amenities",
+  "info": {
+    "displayName": "Amenities"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "shared.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::amenity.amenity"
+    }
+  },
+  "config": {}
+}
