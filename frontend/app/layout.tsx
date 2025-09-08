@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import WhatsAppBtn from "@/components/WhatsAppBtn";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,8 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       {/* <Head /> */}
       <body>
-        <main className="relative">
+        <Header className="fixed top-0 z-50 " />
+        <main className="relative pt-20">
           {children}
           <WhatsAppBtn />
         </main>
