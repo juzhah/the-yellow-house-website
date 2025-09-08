@@ -1,0 +1,20 @@
+name: Deploy Strapi CMS
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - "strapi-cms/**"
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and Deploy Strapi
+        # Your build, test, and deploy steps for Strapi go here
+        run: echo "Building and deploying Strapi..."

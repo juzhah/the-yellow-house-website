@@ -1,0 +1,128 @@
+# ===================================================================
+# A. Global / Common
+# Rules that apply to the entire repository.
+# ===================================================================
+
+# OS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE & Editor folders
+.idea
+nbproject
+
+# Log and temporary files
+*.log
+*.pid
+.tmp
+
+# Compiled files & packages
+*.cab
+*.msi
+*.msm
+*.msp
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.out
+
+# ===================================================================
+# B. Frontend (next-app)
+# Ignored files specific to the 'frontend/' directory.
+# ===================================================================
+
+# Dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.*
+frontend/.yarn/*
+!frontend/.yarn/patches
+!frontend/.yarn/plugins
+!frontend/.yarn/releases
+!frontend/.yarn/versions
+
+# Next.js build artifacts
+frontend/.next/
+frontend/out/
+frontend/build
+
+# Testing
+frontend/coverage
+
+# Debug logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnpm-debug.log*
+
+# Environment variables
+frontend/.env*
+
+# Vercel & TypeScript
+frontend/.vercel
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+
+# ===================================================================
+# C. Strapi CMS
+# Ignored files specific to the 'strapi-cms/' directory.
+# ===================================================================
+
+# Dependencies
+strapi-cms/node_modules
+strapi-cms/.pnp.*
+strapi-cms/.yarn/*
+!strapi-cms/.yarn/cache
+!strapi-cms/.yarn/unplugged
+!strapi-cms/.yarn/patches
+!strapi-cms/.yarn/releases
+!strapi-cms/.yarn/sdks
+!strapi-cms/.yarn/versions
+strapi-cms/yarn-error.log
+
+# Strapi build artifacts & cache
+strapi-cms/build
+strapi-cms/dist
+strapi-cms/.cache
+strapi-cms/.strapi
+strapi-cms/.strapi-updater.json
+strapi-cms/.strapi-cloud.json
+strapi-cms/exports
+
+# Uploads (allow the .gitkeep file to track the folder itself)
+strapi-cms/public/uploads/*
+!strapi-cms/public/uploads/.gitkeep
+
+# Local databases
+strapi-cms/*.sql
+strapi-cms/*.sqlite
+strapi-cms/*.sqlite3
+
+# Environment variables
+strapi-cms/.env
+
+# Misc
+strapi-cms/license.txt
+strapi-cms/.eslintcache
+strapi-cms/.tsbuildinfo
