@@ -12,8 +12,7 @@ export default async function Home() {
   const { hero, featured, features, amenities, contact } = sections;
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
-      <Header className="fixed top-0 z-50 " />
+    <div className="min-h-screen bg-white overflow-hidden ">
       <Hero data={hero} />
       <Apartments data={featured} />
       <Features />
