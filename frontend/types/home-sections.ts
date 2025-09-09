@@ -2,37 +2,23 @@
 
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 import { ReactNode } from "react";
+import { ImageType } from "./image";
 
-export interface Response {
-  data: Data;
-  meta: Meta;
-}
-
-export interface Data {
-  id: number;
-  documentId: string;
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date;
-  locale: string;
-  homeSections: HomePage[];
-}
-
-export interface HomePage {
+/* export interface HomePage {
   hero: HeroSection;
   featured: FeaturedSection;
   features: FeaturesSection;
   amenities: AmenitiesSection;
   contact: ContactSection;
   "c2-a": C2ASection;
-}
+} */
 
 export interface HeroSection {
   title: BlocksContent;
   description: BlocksContent;
   primaryBtn: Button;
   secondaryBtn: Button;
-  cover: Cover;
+  cover: ImageType;
 }
 
 export interface Button {
@@ -48,12 +34,6 @@ export interface Description {
 export interface DescriptionChild {
   type: string;
   text: string;
-}
-
-export interface Heading {
-  id: number;
-  title: string;
-  description: null | string;
 }
 
 export interface Property {
@@ -87,8 +67,6 @@ export interface TitleChild {
   bold?: boolean;
 }
 
-export interface Meta {}
-
 export interface Cover {
   id: number;
   documentId: string;
@@ -111,39 +89,7 @@ export interface Cover {
   publishedAt: Date;
 }
 
-export interface FeaturedSection {
-  id: number;
-  heading: Heading;
-  property: Property[];
-}
-
-export interface FeaturesSection {
-  id: number;
-  heading: Heading;
-  features: any[];
-}
-
-export interface AmenitiesSection {
-  id: number;
-  heading: Heading;
-  amenities: Amenities[];
-}
-
 export interface Amenities {
   id: number;
   name: string;
-}
-
-export interface ContactSection {
-  id: number;
-  email: string;
-  phone: string;
-  direction: string;
-  heading: Heading;
-}
-
-export interface C2ASection {
-  id: number;
-  heading: Heading;
-  button: Button;
 }
