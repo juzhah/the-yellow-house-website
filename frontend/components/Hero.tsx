@@ -1,7 +1,6 @@
-import { STRAPI_DOMAIN, strapiQuery } from "@/lib/strapi";
-import { scrollToSection } from "@/lib/utils";
-import { StrapiResponse } from "@/types/strapi-api";
+import { strapiQuery } from "@/lib/strapi";
 import { HeroSection } from "@/types/home-sections";
+import { StrapiResponse } from "@/types/strapi-api";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { MapPin, Star, Users } from "lucide-react";
 import Image from "next/image";

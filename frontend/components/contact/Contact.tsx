@@ -1,9 +1,7 @@
-import { C2ASection, ContactSection } from "@/types/home-sections";
-import { Mail, MapPin, Phone } from "lucide-react";
 import ContactCard from "./ContactCard";
 
-import { ContactEntry, ContactResponse } from "@/types/contact";
 import { strapiQuery } from "@/lib/strapi";
+import { ContactEntry, ContactResponse } from "@/types/contact";
 
 export default async function Contact() {
   const params =

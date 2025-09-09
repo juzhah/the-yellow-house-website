@@ -1,5 +1,3 @@
-import { Property } from "@/types/property-types";
-
 import { strapiQuery } from "@/lib/strapi";
 import { Featured } from "@/types/featured";
 import { StrapiResponse } from "@/types/strapi-api";
@@ -7,9 +5,6 @@ import Link from "next/link";
 import ApartmentCard from "./ApartmentCard";
 
 export default async function Apartments() {
-  /* TODO: Refactor content fetching */
-
-  /* const params = `populate[homeSections][on][sections.featured][populate][properties][populate][0]=images`; */
   const params =
     "populate[homeSections][on][sections.featured][populate][heading]=*&populate[homeSections][on][sections.featured][populate][properties][populate][0]=images";
 
