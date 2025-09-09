@@ -2,7 +2,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import { STRAPI_DOMAIN } from "@/lib/strapi";
 import { scrollToSection } from "@/lib/utils";
 import { ImageType } from "@/types/image";
 import { useState } from "react";

@@ -1,6 +1,5 @@
 import { STRAPI_DOMAIN } from "@/lib/strapi";
 import { ContactEntry } from "@/types/contact";
-import React from "react";
 
 export default function ContactCard({ contact }: { contact: ContactEntry }) {
   return (
