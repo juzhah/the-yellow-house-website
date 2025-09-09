@@ -1,4 +1,4 @@
-export type Endpoint = "home" | "properties" | "featured";
+export type Endpoint = "home" | "properties" | "featured" | string;
 export interface StrapiResponse<T> {
   data: Data<T>;
   meta: Meta;
