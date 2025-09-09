@@ -1,7 +1,5 @@
-import strapiQuery from "@/lib/strapi";
-import { STRAPI_DOMAIN } from "@/lib/utils";
+import { STRAPI_DOMAIN, strapiQuery } from "@/lib/strapi";
 import { Feature } from "@/types/features";
-import { AmenitiesSection, FeaturesSection } from "@/types/home-sections";
 import { Check } from "lucide-react";
 
 export default async function Features() {

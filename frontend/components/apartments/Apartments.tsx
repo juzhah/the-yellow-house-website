@@ -1,26 +1,23 @@
-import strapiQuery from "@/lib/strapi";
-import { FeaturedSection } from "@/types/home-sections";
 import { Property } from "@/types/property-types";
 
-import ApartmentCard from "./ApartmentCard";
+import { strapiQuery } from "@/lib/strapi";
+import { Featured } from "@/types/featured";
+import { StrapiResponse } from "@/types/strapi-api";
 import Link from "next/link";
-import { Divide } from "lucide-react";
+import ApartmentCard from "./ApartmentCard";
 
-export default async function Apartments({ data }: { data: FeaturedSection }) {
+export default async function Apartments() {
   /* TODO: Refactor content fetching */
 
-  const params = `populate[homeSections][on][sections.featured][populate][properties][populate][0]=images`;
-  let heading, properties;
-  const res = await strapiQuery("home", params);
+  /* const params = `populate[homeSections][on][sections.featured][populate][properties][populate][0]=images`; */
+  const params =
+    "populate[homeSections][on][sections.featured][populate][heading]=*&populate[homeSections][on][sections.featured][populate][properties][populate][0]=images";
 
-  if (data) heading = data.heading;
-  if (res.data !== null) properties = res.data.homeSections[0];
+  try {
+    const res: StrapiResponse<Featured> = await strapiQuery("home", params);
 
-  // Call an external API endpoint to get posts
+    const { heading, properties } = res.data.homeSections[0];
 
-  const featuredProperties: Property[] = properties;
-
-  if (heading && properties) {
     return (
       <section
         id="apartments"
@@ -46,13 +43,13 @@ export default async function Apartments({ data }: { data: FeaturedSection }) {
 
         {/* Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-          {featuredProperties.map((featured) => (
+          {properties.map((featured) => (
             <ApartmentCard key={featured.id} apartment={featured} />
           ))}
         </div>
       </section>
     );
-  } else {
+  } catch (error) {
     return <div>nothing to show</div>;
   }
 }

@@ -4,8 +4,9 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 import ApartmentCard from "@/components/apartments/ApartmentCard";
-import strapiQuery from "@/lib/strapi";
-import { Property } from "@/types/property-types";
+
+import { strapiQuery } from "@/lib/strapi";
+import { Property } from "@/types/featured";
 
 export default async function Apartments() {
   const params = "populate=*";
