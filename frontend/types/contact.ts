@@ -5,7 +5,7 @@ export interface ContactResponse {
   __component: string;
   id: number;
   heading: Heading;
-  contacts: Contact[];
+  contacts: ContactEntry[];
 }
 
 export interface ContactEntry {
