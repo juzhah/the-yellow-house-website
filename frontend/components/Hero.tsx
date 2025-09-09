@@ -1,15 +1,22 @@
-"use client";
-
+import { STRAPI_DOMAIN, strapiQuery } from "@/lib/strapi";
 import { scrollToSection } from "@/lib/utils";
+import { StrapiResponse } from "@/types/strapi-api";
 import { HeroSection } from "@/types/home-sections";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { MapPin, Star, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./ui/Button";
 
-export default function Hero({ data }: { data: HeroSection }) {
+export default async function Hero() {
+  const params = "populate[homeSections][on][sections.hero][populate]=*";
+
   try {
+    const res: StrapiResponse<HeroSection> = await strapiQuery("home", params);
+
+    const data = res.data.homeSections[0] as HeroSection;
     const { title, description, primaryBtn, secondaryBtn, cover } = data;
+
     return (
       <section
         id="home"
@@ -28,12 +35,7 @@ export default function Hero({ data }: { data: HeroSection }) {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => scrollToSection("booking")}
-                  className="btn-primary"
-                >
-                  {primaryBtn.text}
-                </button>
+                <Button className={"btn-primary"} content={primaryBtn.text} />
                 <Link
                   href={"/apartments"}
                   className="btn-secondary text-center"
@@ -59,11 +61,11 @@ export default function Hero({ data }: { data: HeroSection }) {
             <div className="relative">
               <Image
                 priority
-                src={`http://localhost:1337${cover.formats.medium?.url}`}
-                alt="The Yellow House Boquete exterior"
+                src={cover.formats.medium?.url}
+                alt={cover.alternativeText}
                 className="rounded-2xl shadow-2xl "
-                width={3024}
-                height={4032}
+                width={cover.width}
+                height={cover.height}
                 sizes="(min-width: 1360px) 584px, (min-width: 1040px) calc(40vw + 48px), calc(97.78vw - 25px)"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">

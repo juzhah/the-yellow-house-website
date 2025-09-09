@@ -2,11 +2,12 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import { PUBLIC_STRAPI_DOMAIN, scrollToSection } from "@/lib/utils";
+import { STRAPI_DOMAIN } from "@/lib/strapi";
+import { scrollToSection } from "@/lib/utils";
+import { ImageType } from "@/types/image";
 import { useState } from "react";
-import { PropertyImage } from "../../types/property-types";
 
-const ApartmentCarousel = ({ images }: { images: PropertyImage[] }) => {
+const ApartmentCarousel = ({ images }: { images: ImageType[] }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -21,10 +22,8 @@ const ApartmentCarousel = ({ images }: { images: PropertyImage[] }) => {
     <div className="relative aspect-video overflow-hidden">
       <Image
         fill
-        src={
-          PUBLIC_STRAPI_DOMAIN + images[currentImageIndex].formats.medium?.url
-        }
-        alt={`${PUBLIC_STRAPI_DOMAIN} - Image `}
+        src={images[currentImageIndex].formats.medium?.url}
+        alt={images[currentImageIndex].alternativeText}
         sizes="(max-width: 640px) 100vw, 25vw"
         className="object-cover"
       />

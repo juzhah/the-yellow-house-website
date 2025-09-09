@@ -1,16 +1,13 @@
-import { Property } from "@/types/property-types";
 import { MapPinned, Scaling, BedDouble, BedSingle, Bath } from "lucide-react";
 import ApartmentCarousel from "./ApartmentCarousel";
+import { Property } from "@/types/featured";
 
 export default function ApartmentCard({ apartment }: { apartment: Property }) {
   return (
     <div className="card hover:shadow-xl transition-shadow duration-300">
       {/* Card Image */}
       <div className="relative">
-        <ApartmentCarousel
-          images={apartment.images}
-          apartmentName={apartment.name}
-        />
+        <ApartmentCarousel images={apartment.images} />
       </div>
       {/* Card Content */}
       <div className="p-5">

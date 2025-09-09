@@ -1,4 +1,4 @@
-import strapiQuery from "./strapi";
+import { strapiQuery } from "./strapi";
 
 export async function getHomeInfo() {
   const params = "populate[homeSections][populate]=*";
@@ -16,7 +16,6 @@ export async function getHomeInfo() {
       },
       {}
     );
-    console.log(typeof sections);
     return sections;
   } catch {
     return {};

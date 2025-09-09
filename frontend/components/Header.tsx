@@ -1,8 +1,8 @@
 "use client";
 import { scrollToSection } from "@/lib/utils";
-import { Home, Menu } from "lucide-react";
-import { useState } from "react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 import Logo from "@/images/logos/the-yellow-house-logo.png";
 import Link from "next/link";

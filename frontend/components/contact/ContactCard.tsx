@@ -1,4 +1,4 @@
-import { STRAPI_DOMAIN } from "@/lib/utils";
+import { STRAPI_DOMAIN } from "@/lib/strapi";
 import { ContactEntry } from "@/types/contact";
 import React from "react";
 

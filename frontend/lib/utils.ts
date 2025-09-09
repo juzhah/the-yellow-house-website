@@ -7,7 +7,4 @@ const scrollToSection = (section: Section) => {
   }
 };
 
-const STRAPI_DOMAIN = process.env.STRAPI_DOMAIN;
-const PUBLIC_STRAPI_DOMAIN = process.env.NEXT_PUBLIC_STRAPI_DOMAIN!;
-
-export { scrollToSection, STRAPI_DOMAIN, PUBLIC_STRAPI_DOMAIN };
+export { scrollToSection };
