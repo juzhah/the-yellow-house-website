@@ -1,6 +1,7 @@
 import { MapPinned, Scaling, BedDouble, BedSingle, Bath } from "lucide-react";
 import ApartmentCarousel from "./ApartmentCarousel";
 import { Property } from "@/types/featured";
+import Link from "next/link";
 
 export default function ApartmentCard({ apartment }: { apartment: Property }) {
   return (
@@ -29,23 +30,26 @@ export default function ApartmentCard({ apartment }: { apartment: Property }) {
         </p>
 
         {/* Specifications */}
-        <div className="flex gap-6 text-[var(--text-light)]">
-          <div className="flex items-center gap-2">
-            <Scaling size={16} color="var(--primary-color)" /> {apartment.area}
+        <Link href={`apartments/${apartment.slug}`}>
+          <div className="flex gap-6 text-[var(--text-light)]">
+            <div className="flex items-center gap-2">
+              <Scaling size={16} color="var(--primary-color)" />{" "}
+              {apartment.area}
+            </div>
+            <div className="flex items-center gap-2">
+              {apartment.rooms! > 1 ? (
+                <BedDouble size={16} color="var(--primary-color)" />
+              ) : (
+                <BedSingle size={16} color="var(--primary-color)" />
+              )}
+              {apartment.rooms}
+            </div>
+            <div className="flex items-center gap-2">
+              <Bath size={16} color="var(--primary-color)" />
+              {apartment.bathrooms}
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            {apartment.rooms! > 1 ? (
-              <BedDouble size={16} color="var(--primary-color)" />
-            ) : (
-              <BedSingle size={16} color="var(--primary-color)" />
-            )}
-            {apartment.rooms}
-          </div>
-          <div className="flex items-center gap-2">
-            <Bath size={16} color="var(--primary-color)" />
-            {apartment.bathrooms}
-          </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
