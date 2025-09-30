@@ -7,7 +7,10 @@ export default function ApartmentCard({ apartment }: { apartment: Property }) {
     <div className="card hover:shadow-xl transition-shadow duration-300">
       {/* Card Image */}
       <div className="relative">
-        <ApartmentCarousel images={apartment.images} />
+        <ApartmentCarousel
+          images={apartment.images}
+          paymentUrl={apartment.payment_url}
+        />
       </div>
       {/* Card Content */}
       <div className="p-5">

@@ -26,5 +26,6 @@ export interface Property {
   updatedAt: Date;
   publishedAt: Date;
   locale: string;
+  payment_url: string | null;
   images: ImageType[];
 }

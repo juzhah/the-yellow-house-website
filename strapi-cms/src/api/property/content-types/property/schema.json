@@ -125,6 +125,15 @@
       },
       "required": true,
       "default": false
+    },
+    "payment_url": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false
     }
   }
 }

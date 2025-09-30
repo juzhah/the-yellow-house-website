@@ -2,11 +2,18 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
+import WompiLogo from "@/images/logos/Wompi_LogoPrincipal.svg";
 import { scrollToSection } from "@/lib/utils";
 import { ImageType } from "@/types/image";
 import { useState } from "react";
 
-const ApartmentCarousel = ({ images }: { images: ImageType[] }) => {
+const ApartmentCarousel = ({
+  images,
+  paymentUrl,
+}: {
+  images: ImageType[];
+  paymentUrl?: string | null;
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -56,13 +63,14 @@ const ApartmentCarousel = ({ images }: { images: ImageType[] }) => {
           </div>
         </>
       )}
-      <button
+      <a
+        href={paymentUrl ? paymentUrl : "#"}
         onClick={() => scrollToSection("booking")}
-        className="hover:cursor-pointer bg-[var(--primary-color)] absolute flex gap-2 items-center top-4 left-4  text-white px-3 py-1 rounded-full text-sm font-medium"
+        className="text-[#000] hover:cursor-pointer bg-[#fff] absolute flex gap-2 items-center top-4 left-4  px-3 py-1 rounded-full text-sm font-medium"
       >
-        Check Availability
-        <ChevronRight />
-      </button>
+        Pay with
+        <Image src={WompiLogo} alt="Wompi Logo" width={64} height={64} />
+      </a>
     </div>
   );
 };
